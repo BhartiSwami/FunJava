@@ -14,7 +14,7 @@ public class ScannerImplementation {
 		Boolean c=sc.nextBoolean();
 	    System.out.println("c="+" "+c);
 	    System.out.println("Enter a String");
-		String d = sc.nextLine(); 
+		String d = sc.next(); 
 		System.out.println("d="+" "+d);
 	}
 }
