@@ -14,7 +14,9 @@ public class ArrayOperations {
 //			InsertElement(arr,n);
 //			DeleteElement(arr,n);
 //			LinearSearch(arr,n);
-			BinarySearch(arr,n);
+//			BinarySearch(arr,n);
+			Sort(arr,n);
+			BubbleSort(arr,n);
 		}
 	}
 	static void InsertElement(int arr[],int n) {
@@ -92,10 +94,20 @@ public class ArrayOperations {
 			System.out.println("Element Not Found!");
 	}
 	static void Sort(int arr[],int n) {
-		
+		Arrays.sort(arr);
+		print(arr);
 	}
 	static void BubbleSort(int arr[],int n) {
-		
+		for(int i=0;i<n;i++) {
+			for(int j=1;j<n-i-1;j++) {
+				if(arr[j]>arr[j+1] ) {
+					int temp=arr[j+1];
+					arr[j+1]=arr[j];
+					arr[j]=temp;
+				}
+			}
+		}
+		print(arr);
 	}
 	static void SelectionSort(int arr[],int n) {
 		
