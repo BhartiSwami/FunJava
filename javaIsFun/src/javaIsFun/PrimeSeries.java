@@ -15,7 +15,7 @@ public class PrimeSeries {
 						flag=1;
 				}
 				if(flag==0){
-					System.out.print(i+" ");
+					System.out.print(i+" "); 
 				}
 			}
 		}
