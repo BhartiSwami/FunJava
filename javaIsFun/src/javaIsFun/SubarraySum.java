@@ -1,42 +1,36 @@
 package javaIsFun;
 import java.util.*;
 
-
-class SubarraySum {
-	public static void main (String[] args) {
-	    Scanner sc=new Scanner(System.in);
-	    int t=sc.nextInt();
-	    while(t-->0){
-	        int n=sc.nextInt();
-	        int sum=sc.nextInt();
-	        int arr[]=new int[n];
-	        for(int i=0;i<n;i++){
-	            arr[i]=sc.nextInt();
-	        }
-	        int flag=0;
-	        int l=0;
-	        int r=0;
-	        int current_sum=arr[0];
-	        while(l<n && r<n){
-	            if(current_sum==sum){
+	class SubarraySum  {
+		public static void main (String[] args) {
+		    Scanner sc=new Scanner(System.in);
+		    int t=sc.nextInt();
+		    while(t-->0){
+		        int n=sc.nextInt();
+		        int sum=sc.nextInt();
+		        int arr[]=new int[n];
+		        for(int i=0;i<n;i++){
+		            arr[i]=sc.nextInt();
+		        }
+		         int curr_sum = arr[0], start = 0, flag=0,i; 
+	        for (i = 1; i <= n; i++) { 
+	            while(curr_sum > sum ) { 
+	                curr_sum = curr_sum - arr[start]; 
+	                start++; 
+	            } 
+	            if (curr_sum == sum) { 
+	                int p = i;
+	                start+=1;
 	                flag=1;
-	                l+=1;
-	                r+=1;
-	                System.out.println(l+" "+r);
-	                break;
-	            }
-	            if(current_sum<sum){
-	                if(r<n-1){
-	                current_sum+=arr[++r];
-	                }
-	            }
-	            if(current_sum>sum){
-	                current_sum-=arr[l++];
-	            }
+	                System.out.println(start + " " + p); 
+	                break; 
+	            } 
+	            if (i < n) 
+	                curr_sum = curr_sum + arr[i]; 
 	        }
-	        if(flag==0){
+	        if(flag==0)
 	            System.out.println("-1");
-	        }
-	    }
+		    }
+		}
 	}
 }
