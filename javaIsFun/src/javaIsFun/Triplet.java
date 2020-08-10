@@ -16,23 +16,15 @@ class Triplet  {
             }
             Arrays.sort(arr);
             int count=0,flag=0;
-            for(int i=n-1;i>=0;i--){
-                int l=0;
-                int r=i-1;
-                while(l<r){
-                    if(arr[i]==arr[l]+arr[r]){
-                        count++;
-                        flag=1;
-                        l++;
-                        r--;
-                    }
-                    else if(arr[i]>arr[l]+arr[r]){
-                        l++;
-                    }
-                    else{
-                        r--;
-                    }
-                }
+            for(int i=0;i<n-2;i++) {
+            	for(int j=i+1;j<n-1;j++) {
+            		for(int k=j+1;k<n;k++) {
+            			if(arr[i]+arr[j]==arr[k]) {
+            				flag=1;
+            				count++;
+            			}
+            		}
+            	}
             }
             if(flag==0)
             System.out.println("-1");
