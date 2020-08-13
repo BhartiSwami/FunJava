@@ -12,12 +12,11 @@ public class DuplicateInArray {
 				arr[i]=sc.nextInt();
 			}
 			int flag=0;
-			int freqArr[]=new int[10];
-			for(int i=0;i<n;i++) {
-				freqArr[arr[i]]+=1;
-				if(freqArr[arr[i]]>1) {
-					System.out.print(arr[i]+" ");
+			Arrays.sort(arr);
+			for(int i=0;i<n-1;i++) {
+				if(arr[i]==arr[i+1]) {
 					flag=1;
+					System.out.print(arr[i]+" ");
 				}
 			}
 			if(flag==0) {
