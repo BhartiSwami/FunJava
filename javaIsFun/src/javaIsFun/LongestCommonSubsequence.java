@@ -2,8 +2,6 @@ package javaIsFun;
 
 public class LongestCommonSubsequence 
 { 
-  
-  /* Returns length of LCS for X[0..m-1], Y[0..n-1] */
   int lcs( char[] X, char[] Y, int m, int n ) 
   { 
     if (m == 0 || n == 0) 
@@ -14,7 +12,6 @@ public class LongestCommonSubsequence
       return max(lcs(X, Y, m, n-1), lcs(X, Y, m-1, n)); 
   } 
   
-  /* Utility function to get max of 2 integers */
   int max(int a, int b) 
   { 
     return (a > b)? a : b; 
@@ -23,8 +20,8 @@ public class LongestCommonSubsequence
   public static void main(String[] args) 
   { 
     LongestCommonSubsequence lcs = new LongestCommonSubsequence(); 
-    String s1 = "AGGTAB"; 
-    String s2 = "GXTXAYB"; 
+    String s1 = "bharti"; 
+    String s2 = "honajri"; 
   
     char[] X=s1.toCharArray(); 
     char[] Y=s2.toCharArray(); 
